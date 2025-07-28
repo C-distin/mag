@@ -1,24 +1,33 @@
 {
-  "name": "mag",
-  "private": true,
-  "scripts": {
-    "build": "turbo run build",
-    "dev": "turbo run dev",
-    "lint": "turbo run lint",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
-    "check-types": "turbo run check-types"
+  "dependencies": {
+    "@tailwindcss/postcss": "^4.1.11",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "postcss": "^8.5.6",
+    "react-icons": "^5.5.0",
+    "tailwind-merge": "^3.3.1",
+    "tailwindcss": "^4.1.11",
+    "tw-animate-css": "^1.3.6"
   },
   "devDependencies": {
-    "prettier": "^3.6.2",
+    "@biomejs/biome": "^2.1.2",
+    "@tailwindcss/forms": "^0.5.10",
+    "@tailwindcss/typography": "^0.5.16",
     "turbo": "^2.5.5",
     "typescript": "5.8.3"
   },
   "engines": {
     "node": ">=18"
   },
+  "name": "mag",
   "packageManager": "bun@1.2.17",
-  "workspaces": [
-    "apps/*",
-    "packages/*"
-  ]
+  "private": true,
+  "scripts": {
+    "build": "turbo run build",
+    "check-types": "turbo run check-types",
+    "dev": "turbo run dev",
+    "format": "biome check --fix --unsafe",
+    "lint": "turbo run lint"
+  },
+  "workspaces": ["apps/*", "packages/*"]
 }
